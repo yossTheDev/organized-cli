@@ -69,6 +69,5 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md"
   },
-  "types": "dist/index.d.ts",
-  "packageManager": "yarn@4.5.3"
+  "types": "dist/index.d.ts"
 }
