@@ -7,8 +7,6 @@ const { ensureDirSync, existsSync, moveSync, readdirSync } = pkg;
 import path from 'node:path';
 
 
-
-
 export default class Organizer extends Command {
     static description = 'Organiza archivos en una carpeta por tipo';
 
