@@ -49,7 +49,10 @@
   "oclif": {
     "bin": "organized",
     "dirname": "organized",
-    "commands": "./dist/commands",
+    "commands": {
+      "strategy": "single",
+      "target": "./dist/index.js"
+    },
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins"
