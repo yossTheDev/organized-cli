@@ -93,7 +93,7 @@ script.js
 
 ## ⚙️ Options
 
-- -f, --folder <path>: Specify the path to the folder to organize (required).
+- -f, --folder: Specify the path to the folder to organize (required).
 
 Example:
 
