@@ -10,7 +10,9 @@
   "dependencies": {
     "@oclif/core": "^4",
     "@oclif/plugin-help": "^6",
-    "@oclif/plugin-plugins": "^5"
+    "@oclif/plugin-plugins": "^5",
+    "@types/fs-extra": "^11.0.4",
+    "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "@oclif/prettier-config": "^0.2.1",
