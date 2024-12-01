@@ -1,9 +1,7 @@
-/* eslint-disable import/default */
-/* eslint-disable import/no-named-as-default-member */
-import { Command, Flags } from '@oclif/core';
-import pkg from 'fs-extra';
-const { ensureDirSync, existsSync, moveSync, readdirSync } = pkg;
+/* eslint-disable import/namespace */
 
+import { Command, Flags } from '@oclif/core';
+import * as fs from "fs-extra";
 import path from 'node:path';
 
 
@@ -23,7 +21,7 @@ export default class Organizer extends Command {
         const { flags } = await this.parse(Organizer);
         const folderPath = path.resolve(flags.folder);
 
-        if (!existsSync(folderPath)) {
+        if (!fs.existsSync(folderPath)) {
             this.error(`La carpeta "${folderPath}" no existe.`);
         }
 
@@ -37,7 +35,7 @@ export default class Organizer extends Command {
 
         this.log(`Organizando archivos en: ${folderPath}`);
 
-        const files = readdirSync(folderPath);
+        const files = fs.readdirSync(folderPath);
 
         for (const file of files) {
             const ext = path.extname(file).toLowerCase();
@@ -46,8 +44,8 @@ export default class Organizer extends Command {
             ) || 'others';
 
             const categoryPath = path.join(folderPath, category);
-            ensureDirSync(categoryPath);
-            moveSync(
+            fs.ensureDirSync(categoryPath);
+            fs.moveSync(
                 path.join(folderPath, file),
                 path.join(categoryPath, file),
                 { overwrite: true }
