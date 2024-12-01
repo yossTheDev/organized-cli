@@ -13,14 +13,39 @@ export default class Organizer extends Command {
         folder: Flags.string({
             char: 'f',
             description: 'Path to the folder to organize',
-            required: true,
+            required: false,
         }),
     };
 
     async run() {
-        console.log(chalk.blueBright('📂 Starting file organization...'));
         const { flags } = await this.parse(Organizer);
-        const folderPath = path.resolve(flags.folder);
+
+
+        // If no flags are provided, show app info
+        if (!flags.folder) {
+            this.log(chalk.blueBright("📦 Welcome to Organized CLI!"));
+            this.log(chalk.greenBright(`
+Organized helps you organize files in a folder by categorizing them into:
+  📂 Documents, Images, Videos, Audio, Archives, Code, Executables, and Others.
+
+Usage:
+  organizer -f <path/to/folder>
+
+Options:
+  -f, --folder    Specify the folder to organize
+  --help          Show this help message
+
+Examples:
+  organizer -f ./my-folder
+  organizer --folder ./downloads
+
+Enjoy organizing your files! 🚀
+            `));
+            return;
+        }
+
+        const folderPath = path.resolve(flags.folder!);
+        console.log(chalk.blueBright('📂 Starting file organization...'));
 
         if (!fs.existsSync(folderPath)) {
             this.error(chalk.red(`❌ The folder "${folderPath}" does not exist.`));
