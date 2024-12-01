@@ -1,8 +1,16 @@
-# organized CLI
+# Organized CLI
 
-🚀 **organized CLI** is a command-line tool to organize files in a folder by categorizing them into directories based on their types. It simplifies managing cluttered directories by grouping files like documents, images, videos, audio, archives, and more.
+![banner](./imgs/banner.webp)
 
----
+🚀 **Organized CLI** is a command-line tool to organize files in a folder by categorizing them into directories based on their types. It simplifies managing cluttered directories by grouping files like documents, images, videos, audio, archives, and more.
+
+<div align="center">
+<img src="https://img.shields.io/badge/Node.js-5FA04E?logo=nodedotjs&logoColor=fff&style=for-the-badge" alt="Node.js Badge">
+<img src="https://img.shields.io/badge/oclif-000?logo=oclif&logoColor=fff&style=for-the-badge" alt="oclif Badge">
+<img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=for-the-badge" alt="TypeScript Badge">
+<img alt="Licence" src="https://img.shields.io/npm/dw/organized-cli.svg?style=for-the-badge">
+<img alt="Licence" src="https://img.shields.io/github/license/yossTheDev/organized-cli?style=for-the-badge">
+</div>
 
 ## 📖 Features
 
