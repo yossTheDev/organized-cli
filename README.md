@@ -13,8 +13,23 @@ A files organizer
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
 # Usage
 <!-- usage -->
+```sh-session
+$ npm install -g organized-cli
+$ organized COMMAND
+running command...
+$ organized (--version)
+organized-cli/0.0.0 win32-x64 node-v22.11.0
+$ organized --help [COMMAND]
+USAGE
+  $ organized COMMAND
+...
+```
+<!-- usagestop -->
 ```sh-session
 $ npm install -g organized-cli
 $ organized COMMAND
@@ -29,6 +44,24 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`organized`](#organized)
+
+## `organized`
+
+Update installed plugins.
+
+```
+USAGE
+  $ organized  [-h] [-v]
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Update installed plugins.
+```
+<!-- commandsstop -->
 * [`organized help [COMMAND]`](#organized-help-command)
 * [`organized plugins`](#organized-plugins)
 * [`organized plugins add PLUGIN`](#organized-plugins-add-plugin)
