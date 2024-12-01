@@ -29,7 +29,7 @@
 Install Organized CLI globally using NPM:
 
 ```bash
-npm install -g organized
+npm install -g organized-cli
 ```
 
 ## 📂 Usage
