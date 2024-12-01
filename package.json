@@ -12,6 +12,7 @@
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^5",
     "@types/fs-extra": "^11.0.4",
+    "chalk": "^5.3.0",
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
