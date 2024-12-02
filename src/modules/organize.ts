@@ -27,26 +27,38 @@ export const organize = (path: string | undefined) => {
 
     const files = fs.readdirSync(folderPath);
 
+    // Iterate over all items in the folder
     for (const file of files) {
+        const filePath = nodePath.join(folderPath, file);
+
+        // Skip if the file is a directory and matches a category name
+        if (fs.statSync(filePath).isDirectory() && Object.keys(categories).includes(file)) {
+            console.log(`${chalk.blue('🔍 Skipped category folder:')} ${chalk.green(file)}`);
+            continue;
+        }
+
         const ext = nodePath.extname(file).toLowerCase();
         const category = Object.keys(categories).find((cat) =>
             categories[cat].includes(ext)
         ) || 'others';
 
         const categoryPath = nodePath.join(folderPath, category);
+
+        // Ensure the category folder exists
         fs.ensureDirSync(categoryPath);
+
+        // Move the file to the appropriate category folder
         fs.moveSync(
-            nodePath.join(folderPath, file),
+            filePath,
             nodePath.join(categoryPath, file),
             { overwrite: true }
         );
 
         console.log(
-            `${chalk.yellow('📁 Moved:')} ${chalk.cyan(file)} ${chalk.magenta(
-                '->'
-            )} ${chalk.green(category + '/')}`
+            `${chalk.yellow('📁 Moved:')} ${chalk.cyan(file)} ${chalk.magenta('->')} ${chalk.green(category + '/')}`
         );
     }
+
 
     console.log(chalk.greenBright('✅ File organization completed successfully! 🎉'));
 }
