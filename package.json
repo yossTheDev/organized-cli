@@ -1,7 +1,7 @@
 {
   "name": "organized-cli",
   "description": "Command-line tool to organize files in a folder by categorizing them into directories based on their types. It simplifies managing cluttered directories by grouping files like documents, images, videos, audio, archives, and more",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Yoannis Sánchez Soto",
   "bin": {
     "organized": "./bin/run.js"
